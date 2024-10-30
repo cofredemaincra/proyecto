@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naikk Aire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Naikk Aire</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#sobre-nosotros">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#mi-cuenta">Mi Cuenta</a></li>
+                <li><a href="#" id="link-carrito">Carrito (<span id="contador-carrito">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+
+            <div class="filtros-busqueda">
+                <input type="text" id="buscador" placeholder="Buscar productos...">
+                <select id="filtro-categoria">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="1">Gorros</option>
+                    <option value="2">Zapatillas</option>
+                    <option value="3">Poleras</option>
+                </select>
+                </select>
+                <select id="filtro-precio">
+                    <option value="todos">Todos los precios</option>
+                    <option value="0-50000">$0 - $50,000</option>
+                    <option value="50001-100000">$50,001 - $100,000</option>
+                    <option value="100001-150000">$100,001 - $150,000</option>
+                    <option value="150001+">Más de $150,000</option>
+                </select>
+            </div>
+
+            <div id="productos-filtrados" class="productos-container"></div>
+        </section>
+
+        <section id="carrito-checkout" class="carrito-checkout-section" style="display: none;">
+            <h2>Tu Carrito</h2>
+            <div id="productos-carrito" class="productos-carrito"></div>
+            <div id="resumen-compra">
+                <h3>Resumen de Compra</h3>
+                <p>Total: $<span id="total-compra">0</span></p>
+            </div>
+            <form id="checkout-form">
+                <h3>Información de Envío</h3>
+                <label for="nombre-comprador">Nombre Completo:</label>
+                <input type="text" id="nombre-comprador" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" required>
+
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" required>
+
+                <label for="codigo-postal">Código Postal:</label>
+                <input type="text" id="codigo-postal" required>
+
+                <h3>Método de Pago</h3>
+                <label for="metodo-pago">Selecciona un método de pago:</label>
+                <select id="metodo-pago" required>
+                    <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                </select>
+
+                <button type="submit" class="cta">Confirmar Compra</button>
+            </form>
+            <button id="seguir-comprando" class="cta">Seguir Comprando</button>
+        </section>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Bienvenido a mí tienda onlain. Aquí encontraras los productos de la mejor calidad. pura originalidad.</p>
+        </section>
+
+        <section id="mi-cuenta">
+            <h2>Mi Cuenta</h2>
+            <form id="mi-cuenta-form">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" required>
+
+                <button type="submit" class="cta">Iniciar Sesión</button>
+            </form>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" required></textarea>
+                <button type="submit" class="cta">Enviar</button>
+            </form>
+        </section>
+
+        <section id="login-register" class="login-register-section">
+            <h2>Iniciar sesión o Registrarse</h2>
+            <form id="login-form">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+                <button type="submit" class="cta">Iniciar Sesión / Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-imagen" src="" alt="Imagen del Producto">
+            <h3 id="modal-nombre"></h3>
+            <p id="modal-descripcion"></p>
+            <p><strong>Precio: $<span id="modal-precio"></span></strong></p>
+            <button id="agregar-carrito-modal" class="cta">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 respetar copi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
